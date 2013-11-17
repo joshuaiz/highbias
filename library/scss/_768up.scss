@@ -1,0 +1,703 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {}
+
+
+/*
+#content { 
+	margin-top: 0;
+	min-height: 500px;
+}
+*/
+#main { margin-bottom: 2em; }
+
+#secondary {
+	/* margin-top: 2em; */
+	border-top: 1px solid #222;
+	min-height: 200px;
+	margin-bottom: 2em;
+}
+
+.file-uploader { 
+	padding: 1em 0 0; 
+	.files p { margin: 0;}
+}
+
+.hbpoption { 
+	p {
+		margin: 0;
+		background: #222;
+		padding: .5em 1em .6em;
+	}
+}
+
+.gecko .top-cart { left: 82.67%; }
+
+.top-cart {
+	position: absolute;
+	left: 84.1%;
+	background: #171717;
+	top: 57px;
+	padding: .5em 1em;
+	width: 160px;
+	font-size: .8rem;
+	height: 29px;
+	z-index: 9999;
+	overflow: hidden;
+	.widget { margin-bottom: 0; }
+	h4.widgettitle { display: none; }
+	.icon-shopping-cart { 
+		float: left; 
+		&:hover, &:focus { opacity: 0.85; }
+	}
+	#Cart66WidgetViewCart, #Cart66WidgetCheckout, #Cart66WidgetLinkSeparator, #Cart66WidgetCartCountText, #Cart66WidgetCartCountDash { display: none; }
+	#Cart66WidgetCartCount {
+		margin: 0 8px;
+		color: #08c;
+		padding: .5em .5em .6em;
+		background: #333;
+		position: relative;
+		top: -1px;
+		&:hover, &:focus { color: $hbm-red; }
+	}
+	#Cart66WidgetCartEmpty {
+		margin: 0 8px;
+		color: #888;
+		padding: .5em;
+		background: #333;
+		display: none;
+	}
+}
+
+.intro { width: 75%; }
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+
+.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
+.home {
+	/* #post-5 .article-header { margin-top: 2.5em; } */
+	.uploader { display: none; }
+	a.upload-trigger {
+		top: 14px;
+		position: relative;
+		background: #333;
+		padding: .3em .5em;
+		color: #CC7A00;
+		&:hover {
+			color: $hbm-red;
+		}
+	}
+}                          /* home page */
+.hbmnews { 
+	#content { margin-top: 1.5em; }
+	article.hentry { border-bottom: 1px solid #222; }
+	.thumbnail-wrapper { 
+		float: left;
+		margin-right: 1em;
+		vertical-align: top;
+		img { height: 96px; width: 96px; }
+	}
+}                          /* blog template page */
+.archive {}                       /* archive page */
+.date {}                          /* date archive page */
+	.date-paged-1 {}                /* replace the number to the corresponding page number */
+.search {}                        /* search page */
+	.search-results {}              /* search result page */
+	.search-no-results {}           /* no results search page */
+	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
+.error404 {}                      /* 404 page */
+.single {}                        /* single post page */
+	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
+	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
+.attachment {}                    /* attatchment page */
+	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
+	.attachment-mime-type {}        /* style mime type pages */
+.author {}                        /* author page */
+	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
+	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
+.category {}                      /* category page */
+	.category-1 {}                  /* individual category page (i.e. body.category-6) */
+	.category-paged-1 {}            /* replace the number to the corresponding page number */
+.tag {}                           /* tag page */
+	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
+	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
+.page-template {}                 /* custom page template page */
+	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
+	.page-paged-1 {}                /* replace the number to the corresponding page number */
+	.page-parent {}                 /* parent page template */
+	.page-child {}                  /* child page template */
+	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
+.logged-in {}                     /* if user is logged in */
+.paged {}                         /* paged items like search results or archives */
+	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+	
+.clients { 
+	h1.page-title {
+		margin-bottom: 0;
+		border-bottom: 1px solid #333;
+	}
+}
+	
+.hbp #text-2 { display: none; }
+	
+.clientlist .clients { float: left; margin-right: 3em; }
+
+
+.pricing h2 a.hpb-heading { color: $hbm-orange !important; }
+
+	/*
+#inner-content .wrap {
+	margin: 2em 0 !important;
+	}
+*/
+
+	
+.gform-confirmation {
+	padding: 1em;
+	background: #333;
+	width: 380px;
+	margin-bottom: 1em;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	max-width: 1140px;
+}
+
+/*
+#inner-content .wrap {
+	margin: 2em 0 !important;
+}
+*/
+
+
+/*********************
+HEADER STYLES
+*********************/
+
+#inner-header { position: relative; }
+
+.header {
+	background: #222;
+}
+
+
+	#logo { 
+		width: 96px;
+		height: 57px;
+		float: left;
+		margin-right: 1.5em;
+		img { width: 96px; }
+	}
+	
+.header-description {
+	font-style: italic;
+	color: #656565;
+	font-size: .81em;
+	position: absolute;
+	left: 0;
+	top: 57px;
+	background: #292929;
+	padding: .3em .7em;
+	z-index: 999;
+	display: none;
+}
+
+.hbpimg {
+	width: 144px;
+	height: 44px;
+	position: relative;
+	top: 5px;
+	left: 10%;
+	float: left;
+}
+
+.mobile-upload { display: none; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+#inner-header { height: 57px; 
+	nav { 
+	float: left;
+	height: 57px;
+	}
+}
+
+ul#menu-main { 
+	margin: .5em 0;
+	padding: 0; 
+}
+
+.nav {
+	background: 0;
+	border: 0;
+
+	li {
+		float: left;
+		position: relative;
+
+		a {
+			border-bottom: 0;
+
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+				
+
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			margin-top: 0;
+			border: 1px solid #ccc;
+			border-top: 0;
+			position: absolute;
+			display: none;
+			z-index: 8999;
+
+			li {
+
+				a {
+					padding-left: 10px;
+					border-right: 0;
+					display: block;
+					width: 180px;
+					border-bottom: 1px solid #ccc;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current-page-ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover ul {
+			top: auto;
+			display: block;
+		}
+
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current-page-ancestor {
+		a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+#text-2 { display: none; }
+
+#execphp-3.widget { 
+	margin: 2.8em 0 0;
+}
+
+#execphp-4 {
+	.execphpwidget {
+	p { 
+		font-size: .875rem;
+		color: #888;
+		span { 
+		font-style: italic; 
+		color: #656565;
+		}
+	}
+	}
+}
+
+.hbpmetaplan {
+	font-size:1.1em;
+	font-weight:700;
+	color:#ccc;
+}
+
+ul.perfect-quotes { padding: 0; }
+
+.home .sidebar { margin-top: -2.6em; }
+.sidebar {
+	margin-top: 2.2em;
+}
+
+	.widgettitle {
+		border-bottom: 1px solid #333;
+		margin-bottom: 0.75em;
+	}
+
+	.widget {
+		padding: 0 10px;
+		margin: 0 0 2em;
+		p { font-size: .875rem; }
+
+		ul {
+			li {
+				margin-bottom: 0.75em;
+
+				&:first-child {}
+				&:last-child {}
+				a {}
+				/* deep nesting */
+
+				ul {
+					margin-top: 0.75em;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+
+
+	/* links widget */
+	.widget_links {}
+	.widget_links ul {}
+	.widget_links ul li {}
+	.widget_links ul li a {}
+
+	/* meta widget */
+	.widget_meta {}
+	.widget_meta ul {}
+	.widget_meta ul li {}
+	.widget_meta ul li a {}
+
+	/* pages widget */
+	.widget_pages {}
+	.widget_pages ul {}
+	.widget_pages ul li {}
+	.widget_pages ul li a {}
+
+	/* recent-posts widget */
+	.widget_recent_entries {}
+	.widget_recent_entries ul {}
+	.widget_recent_entries ul li {}
+	.widget_recent_entries ul li a {}
+
+	/* archives widget */
+	.widget_archive {}
+	.widget_archive ul {}
+	.widget_archive ul li {}
+	.widget_archive ul li a {}
+	.widget_archive select {}
+	.widget_archive option {}
+
+	/* tag-cloud widget */
+	.widget_links {}
+	.widget_links li:after {}
+	.widget_links li:before {}
+	.widget_tag_cloud {}
+	.widget_tag_cloud a {}
+	.widget_tag_cloud a:after {}
+	.widget_tag_cloud a:before {}
+
+	/* calendar widget */
+	.widget_calendar {}
+	#calendar_wrap {}
+	#calendar_wrap th {}
+	#calendar_wrap td {}
+	#wp-calendar tr td {}
+	#wp-calendar caption {}
+	#wp-calendar a {}
+	#wp-calendar #today {}
+	#wp-calendar #prev {}
+	#wp-calendar #next {}
+	#wp-calendar #next a {}
+	#wp-calendar #prev a {}
+
+	/* category widget */
+	.widget_categories {}
+	.widget_categories ul {}
+	.widget_categories ul li {}
+	.widget_categories ul ul.children {}
+	.widget_categories a {}
+	.widget_categories select{}
+	.widget_categories select#cat {}
+	.widget_categories select.postform {}
+	.widget_categories option {}
+	.widget_categories .level-0 {}
+	.widget_categories .level-1 {}
+	.widget_categories .level-2 {}
+	.widget_categories .level-3 {}
+
+	/* recent-comments widget */
+	.recentcomments {}
+	#recentcomments {}
+	#recentcomments li {}
+	#recentcomments li a {}
+	.widget_recent_comments {}
+
+	/* search widget */
+	#searchform {}
+	.widget_search {}
+	.screen-reader-text {}
+
+	/* text widget */
+	#text-2 .textwidget {
+		p { 
+			margin: 0;
+			font-size: .875rem;
+		}
+		img { 
+			height: 96px;
+			width: 96px; 
+		}
+	}
+	.widget_text {}
+	.textwidget p {}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+
+.footer { padding-top: 1.5em; }
+
+#inner-footer nav {
+	width: 200px;
+	float: left;
+}
+
+#menu-footer {
+	ul {
+		li {
+			a {
+				&:hover { color: #999; }
+			}
+			/*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+			ul {}
+		}
+	}
+} /* end .footer-links */
+
+#testimonials {
+	margin: 0;
+	width: 600px;
+	height:	200px;
+	float: right;
+}
+
+#testimonials .slide{
+	color: #9c968e;
+	background: #222;
+	padding: 1em 2em;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	border-color: #222;
+}
+
+#testimonials .client-contact-info{
+	margin: 0;
+	float: none;
+	color: #ccc;
+	font-size: 1.2em;
+	span { color: darken($hbm-red, 10%); }
+}
+#testimonials .testimonial-quote {padding: 0; line-height: 1.5em; font-size: 16px; font-weight: normal; font-style: italic; margin: 10px 0; font-size: .875rem; }
+
+.slide:after {
+   content: "";
+   position: absolute;
+   /* top: 100%; */
+   left: 50%;
+   border-top: 30px solid black;
+   border-top-color: inherit; 
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent; 
+}
+
+#inner-footer p.copyright {
+	clear: both;
+}
+
+
+.tooltip {
+position: relative !important;
+}
+
+.tooltip.bottom {
+padding: 5px 0;
+margin: 1.5em 0;
+}
+
+.tooltip.bottom .tooltip-arrow {
+border-bottom-color: #222;
+border-width: 0 9px 9px;
+top: -3px;
+left: 30px;
+}
+
+.tooltip-inner {
+background-color: #222;
+line-height: 17.99px;
+padding: 12px 12px;
+text-align: center;
+width: 383px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+font-size: .75rem;
+color: #888;
+}
+
+.tooltip-arrow {
+position: absolute;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+}
+
+
+
+.lwa-header { 
+	float: right; 
+	height: 57px; 
+}
+
+.lwa-header .lwa, .lwa-header .lwa-form, .lwa-header .lwa-form table, .lwa-header .lwa-form tbody, .lwa-header .lwa-row, .lwa-row td { 
+	height: 57px !important;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+
+.lwa-row .lwa-username-label, .lwa-row .lwa-username-input, .lwa-row .lwa-password-label, .lwa-row .lwa-password-input { 
+	float: left; 
+}
+
+.lwa-row .lwa-username-input, .lwa-row .lwa-password-input {
+	position: relative;
+	top: 10px;
+}
+
+.lwa-row label {
+	margin-bottom: 0px;
+	font-size: 13px;
+}
+
+.gecko .lwa-row .lwa-username-input, .gecko .lwa-row .lwa-password-input, .safari .lwa-row .lwa-username-input, .safari .lwa-row .lwa-password-input {
+    margin-right: 15px;
+}
+
+.gecko .lwa-row input[type="text"], .gecko .lwa-row input[type="password"], .safari .lwa-row input[type="text"], .safari .lwa-row input[type="password"] {
+    padding: 0.2em;
+}
+
+.lwa-row .lwa-username-input, .lwa-row .lwa-password-input { width: 125px; margin-right: 15px; }
+
+.lwa-row input[type="text"], .lwa-row input[type="password"] {
+	width: 125px;
+	height: 24px;
+	margin-right: 15px;
+}
+
+.lwa-row .lwa-username-label, .lwa-row .lwa-password-label {
+	padding-right: 10px;
+	vertical-align: top;
+	position: relative;
+	top: 10px;
+}
+
+.lwa-row .lwa-submit-button input[type="submit"] {
+	font-size: 1rem;
+	padding: 7px 12px;
+	margin-right: 1em;
+	margin-bottom: 0;
+	margin-top: 4px; 
+	background: #08c;
+	&:hover, &:focus {
+		background: darken(#08c, 10%);
+	}
+}
+
+.lwa-row .lwa-submit-links label {
+	position: relative;
+	top: 2px;
+}
+
+.lwa-header .lwa-info { 
+	width: 125px;
+	position: relative;
+	top: 7px;
+	font-size: 13px;
+}
+
+/* .administrator .lwa-header .lwa-info,  { font-size: 13px; } */
+
+.gecko .lwa-header .lwa-info a, .safari .lwa-header .lwa-info a {
+	position: relative;
+    top: 5px;
+}
+
+.lwa td.avatar {
+	padding-top: 0;
+}

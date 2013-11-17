@@ -1,0 +1,579 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+
+.rightfix { float: right; margin-top: 1em; }
+
+/*********************
+TOOLS
+*********************/
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.image-replacement { text-indent: 100%; white-space: nowrap; overflow: hidden; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/* $link-color: 		$hbm-red; */
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face { 	font-family: 'Font Name'; 	src: url('library/fonts/font-name.eot'); 	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'), url('library/fonts/font-name.woff') format('woff'), url('library/fonts/font-name.ttf') format('truetype'), url('library/fonts/font-name.svg#font-name') format('svg'); 	font-weight: normal; 	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp { font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important; font-style: italic; }
+
+.text-left { text-align: left; }
+
+.text-center { text-align: center; }
+
+.text-right { text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success { margin: 10px; padding: 5px 18px; border: 1px solid; }
+
+.alert-help { border-color: #e8dc59; background: #ebe16f; }
+
+.alert-info { border-color: #bfe4f4; background: #d5edf8; }
+
+.alert-error { border-color: #f8cdce; background: #fbe3e4; }
+
+.alert-success { border-color: #deeaae; background: #e6efc2; }
+
+/*********************
+LISTS
+*********************/
+.list-square { list-style-type: square; margin: 0 0 2em 18px; }
+
+.tips { padding: 0 0 0 21px; }
+.tips li { margin: 1em 0; }
+
+.nostyle { list-style-type: none; margin: 0; padding: 0; }
+
+/*********************
+IMAGES
+*********************/
+.alignleft { float: left; margin-right: 1em; vertical-align: top; }
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited { font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; border: 0 !important; 	/*
+border: 1px solid darken($link-color, 13%);
+	border-top-color: darken($link-color, 7%);
+	border-left-color: darken($link-color, 7%);
+*/ padding: 8px 16px; color: white; display: inline-block; font-size: 1em; font-weight: bold; text-decoration: none; /* text-shadow: 0 1px rgba(0,0,0, .75); */ cursor: pointer; margin-bottom: 20px; line-height: 21px; border-radius: 4px; background-color: #0077b3; background-image: -webkit-gradient(linear, left top, left bottom, from(#0088cc), to(#0077b3)); background-image: -webkit-linear-gradient(top, #0088cc, #0077b3); background-image: -moz-linear-gradient(top, #0088cc, #0077b3); background-image: -o-linear-gradient(top, #0088cc, #0077b3); background-image: linear-gradient(to bottom, #0088cc, #0077b3); }
+.button:hover, .button:focus, .button:visited:hover, .button:visited:focus { color: white; border: 0; 	  	/*
+border-top-color: darken($link-color, 20%);
+	 	border-left-color: darken($link-color, 20%);
+*/ background: #0099e6; }
+.button:active, .button:visited:active { background-color: #0088cc; background-image: -webkit-gradient(linear, left top, left bottom, from(#0077b3), to(#0088cc)); background-image: -webkit-linear-gradient(top, #0077b3, #0088cc); background-image: -moz-linear-gradient(top, #0077b3, #0088cc); background-image: -o-linear-gradient(top, #0077b3, #0088cc); background-image: linear-gradient(to bottom, #0077b3, #0088cc); }
+
+.blue-button, .blue-button:visited { border-color: #1472ad; text-shadow: 0 1px 1px #1472ad; background-color: #1681c4; background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4)); background-image: -webkit-linear-gradient(top, #1990db, #1681c4); background-image: -moz-linear-gradient(top, #1990db, #1681c4); background-image: -o-linear-gradient(top, #1990db, #1681c4); background-image: linear-gradient(to bottom, #1990db, #1681c4); box-shadow: inset 0 0 3px #59b3ec; }
+.blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus { border-color: #116396; background-color: #1472ad; background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad)); background-image: -webkit-linear-gradient(top, #1784c9, #1472ad); background-image: -moz-linear-gradient(top, #1784c9, #1472ad); background-image: -o-linear-gradient(top, #1784c9, #1472ad); background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
+.blue-button:active, .blue-button:visited:active { background-color: #1990db; background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db)); background-image: -webkit-linear-gradient(top, #1681c4, #1990db); background-image: -moz-linear-gradient(top, #1681c4, #1990db); background-image: -o-linear-gradient(top, #1681c4, #1990db); background-image: linear-gradient(to bottom, #1681c4, #1990db); }
+
+.btn { text-shadow: none !important; padding: .9em 1.3em .9em 1em; }
+
+.btn:hover, .btn:focus { background-image: none !important; background-position: 0 !important; background-color: #47D147 !important; }
+
+.btn:active { box-shadow: none !important; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol { width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol { width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol { width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol { width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol { width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol { width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol { width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol { width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol { width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol { width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol { width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol { width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol { position: relative; float: left; margin-left: 2.762430939%; }
+
+.first { margin-left: 0; }
+
+.last { float: right; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu { /* end .menu ul */ }
+.menu ul { /* end .menu ul li */ /* highlight current page */ /* end current highlighters */ }
+.menu ul li { /*
+plan your menus and drop-downs wisely.
+*/ }
+.menu ul li a { /*
+you can use hover styles here even though this size
+has the possibility of being a mobile device.
+*/ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content { /* at this larger size, we can start to align images */ }
+.entry-content .alignleft, .entry-content img.alignleft { margin-right: 1.5em; display: inline; float: left; }
+.entry-content .alignright, .entry-content img.alignright { margin-left: 1.5em; display: inline; float: right; }
+.entry-content .aligncenter, .entry-content img.aligncenter { margin-right: auto; margin-left: auto; display: block; clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*
+#content { 
+	margin-top: 0;
+	min-height: 500px;
+}
+*/
+#main { margin-bottom: 2em; }
+
+#secondary { /* margin-top: 2em; */ border-top: 1px solid #222; min-height: 200px; margin-bottom: 2em; }
+
+.file-uploader { padding: 1em 0 0; }
+.file-uploader .files p { margin: 0; }
+
+.hbpoption p { margin: 0; background: #222; padding: .5em 1em .6em; }
+
+.gecko .top-cart { left: 82.67%; }
+
+.top-cart { position: absolute; left: 84.1%; background: #171717; top: 57px; padding: .5em 1em; width: 160px; font-size: .8rem; height: 29px; z-index: 9999; overflow: hidden; }
+.top-cart .widget { margin-bottom: 0; }
+.top-cart h4.widgettitle { display: none; }
+.top-cart .icon-shopping-cart { float: left; }
+.top-cart .icon-shopping-cart:hover, .top-cart .icon-shopping-cart:focus { opacity: 0.85; }
+.top-cart #Cart66WidgetViewCart, .top-cart #Cart66WidgetCheckout, .top-cart #Cart66WidgetLinkSeparator, .top-cart #Cart66WidgetCartCountText, .top-cart #Cart66WidgetCartCountDash { display: none; }
+.top-cart #Cart66WidgetCartCount { margin: 0 8px; color: #08c; padding: .5em .5em .6em; background: #333; position: relative; top: -1px; }
+.top-cart #Cart66WidgetCartCount:hover, .top-cart #Cart66WidgetCartCount:focus { color: #ee3b28; }
+.top-cart #Cart66WidgetCartEmpty { margin: 0 8px; color: #888; padding: .5em; background: #333; display: none; }
+
+.intro { width: 75%; }
+
+/********************
+WORDPRESS BODY CLASSES
+style a page via class
+********************/
+/* for sites that are read right to left (i.e. hebrew) */
+.home { /* #post-5 .article-header { margin-top: 2.5em; } */ }
+.home .uploader { display: none; }
+.home a.upload-trigger { top: 14px; position: relative; background: #333; padding: .3em .5em; color: #CC7A00; }
+.home a.upload-trigger:hover { color: #ee3b28; }
+
+/* home page */
+.hbmnews #content { margin-top: 1.5em; }
+.hbmnews article.hentry { border-bottom: 1px solid #222; }
+.hbmnews .thumbnail-wrapper { float: left; margin-right: 1em; vertical-align: top; }
+.hbmnews .thumbnail-wrapper img { height: 96px; width: 96px; }
+
+/* blog template page */
+/* archive page */
+/* date archive page */
+/* replace the number to the corresponding page number */
+/* search page */
+/* search result page */
+/* no results search page */
+/* individual paged search (i.e. body.search-paged-3) */
+/* 404 page */
+/* single post page */
+/* individual post page by id (i.e. body.postid-73) */
+/* individual paged single (i.e. body.single-paged-3) */
+/* attatchment page */
+/* individual attatchment page (i.e. body.attachmentid-763) */
+/* style mime type pages */
+/* author page */
+/* user nicename (i.e. body.author-samueladams) */
+/* paged author archives (i.e. body.author-paged-4) for page 4 */
+/* category page */
+/* individual category page (i.e. body.category-6) */
+/* replace the number to the corresponding page number */
+/* tag page */
+/* individual tag page (i.e. body.tag-news) */
+/* replace the number to the corresponding page number */
+/* custom page template page */
+/* individual page template (i.e. body.page-template-contact-php */
+/* replace the number to the corresponding page number */
+/* parent page template */
+/* child page template */
+/* replace the number to the corresponding page number */
+/* if user is logged in */
+/* paged items like search results or archives */
+/* individual paged (i.e. body.paged-3) */
+.clients h1.page-title { margin-bottom: 0; border-bottom: 1px solid #333; }
+
+.hbp #text-2 { display: none; }
+
+.clientlist .clients { float: left; margin-right: 3em; }
+
+.pricing h2 a.hpb-heading { color: #cc7a00 !important; }
+
+	/*
+#inner-content .wrap {
+	margin: 2em 0 !important;
+	}
+*/
+.gform-confirmation { padding: 1em; background: #333; width: 380px; margin-bottom: 1em; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap { max-width: 1140px; }
+
+/*
+#inner-content .wrap {
+	margin: 2em 0 !important;
+}
+*/
+/*********************
+HEADER STYLES
+*********************/
+#inner-header { position: relative; }
+
+.header { background: #222; }
+
+#logo { width: 96px; height: 57px; float: left; margin-right: 1.5em; }
+#logo img { width: 96px; }
+
+.header-description { font-style: italic; color: #656565; font-size: .81em; position: absolute; left: 0; top: 57px; background: #292929; padding: .3em .7em; z-index: 999; display: none; }
+
+.hbpimg { width: 144px; height: 44px; position: relative; top: 5px; left: 10%; float: left; }
+
+.mobile-upload { display: none; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+#inner-header { height: 57px; }
+#inner-header nav { float: left; height: 57px; }
+
+ul#menu-main { margin: .5em 0; padding: 0; }
+
+.nav { background: 0; border: 0; /* end .menu ul li */ /* highlight current page */ /* end current highlighters */ }
+.nav li { float: left; position: relative; /*
+plan your menus and drop-downs wisely.
+*/ /* showing sub-menus */ }
+.nav li a { border-bottom: 0; /*
+you can use hover styles here even though this size
+has the possibility of being a mobile device.
+*/ }
+.nav li ul.sub-menu, .nav li ul.children { margin-top: 0; border: 1px solid #ccc; border-top: 0; position: absolute; display: none; z-index: 8999; /* highlight sub-menu current page */ }
+.nav li ul.sub-menu li, .nav li ul.children li { /*
+if you need to go deeper, go nuts
+just remember deeper menus suck
+for usability. k, bai.
+*/ }
+.nav li ul.sub-menu li a, .nav li ul.children li a { padding-left: 10px; border-right: 0; display: block; width: 180px; border-bottom: 1px solid #ccc; }
+.nav li ul.sub-menu li:last-child a, .nav li ul.children li:last-child a { border-bottom: 0; }
+.nav li:hover ul { top: auto; display: block; }
+
+/* end .nav */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+#text-2 { display: none; }
+
+#execphp-3.widget { margin: 2.8em 0 0; }
+
+#execphp-4 .execphpwidget p { font-size: .875rem; color: #888; }
+#execphp-4 .execphpwidget p span { font-style: italic; color: #656565; }
+
+.hbpmetaplan { font-size: 1.1em; font-weight: 700; color: #ccc; }
+
+ul.perfect-quotes { padding: 0; }
+
+.home .sidebar { margin-top: -2.6em; }
+
+.sidebar { margin-top: 2.2em; }
+
+.widgettitle { border-bottom: 1px solid #333; margin-bottom: 0.75em; }
+
+.widget { padding: 0 10px; margin: 0 0 2em; }
+.widget p { font-size: .875rem; }
+.widget ul li { margin-bottom: 0.75em; /* deep nesting */ }
+.widget ul li ul { margin-top: 0.75em; padding-left: 1em; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+#text-2 .textwidget p { margin: 0; font-size: .875rem; }
+#text-2 .textwidget img { height: 96px; width: 96px; }
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer { padding-top: 1.5em; }
+
+#inner-footer nav { width: 200px; float: left; }
+
+#menu-footer ul li { /*
+be careful with the depth of your menus.
+it's very rare to have multi-depth menus in
+the footer.
+*/ }
+#menu-footer ul li a:hover { color: #999; }
+
+/* end .footer-links */
+#testimonials { margin: 0; width: 600px; height: 200px; float: right; }
+
+#testimonials .slide { color: #9c968e; background: #222; padding: 1em 2em; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border-color: #222; }
+
+#testimonials .client-contact-info { margin: 0; float: none; color: #ccc; font-size: 1.2em; }
+#testimonials .client-contact-info span { color: #d22311; }
+
+#testimonials .testimonial-quote { padding: 0; line-height: 1.5em; font-size: 16px; font-weight: normal; font-style: italic; margin: 10px 0; font-size: .875rem; }
+
+.slide:after { content: ""; position: absolute; /* top: 100%; */ left: 50%; border-top: 30px solid black; border-top-color: inherit; border-left: 30px solid transparent; border-right: 30px solid transparent; }
+
+#inner-footer p.copyright { clear: both; }
+
+.tooltip { position: relative !important; }
+
+.tooltip.bottom { padding: 5px 0; margin: 1.5em 0; }
+
+.tooltip.bottom .tooltip-arrow { border-bottom-color: #222; border-width: 0 9px 9px; top: -3px; left: 30px; }
+
+.tooltip-inner { background-color: #222; line-height: 17.99px; padding: 12px 12px; text-align: center; width: 383px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; font-size: .75rem; color: #888; }
+
+.tooltip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
+
+.lwa-header { float: right; height: 57px; }
+
+.lwa-header .lwa, .lwa-header .lwa-form, .lwa-header .lwa-form table, .lwa-header .lwa-form tbody, .lwa-header .lwa-row, .lwa-row td { height: 57px !important; margin-bottom: 0; overflow: hidden; }
+
+.lwa-row .lwa-username-label, .lwa-row .lwa-username-input, .lwa-row .lwa-password-label, .lwa-row .lwa-password-input { float: left; }
+
+.lwa-row .lwa-username-input, .lwa-row .lwa-password-input { position: relative; top: 10px; }
+
+.lwa-row label { margin-bottom: 0px; font-size: 13px; }
+
+.gecko .lwa-row .lwa-username-input, .gecko .lwa-row .lwa-password-input, .safari .lwa-row .lwa-username-input, .safari .lwa-row .lwa-password-input { margin-right: 15px; }
+
+.gecko .lwa-row input[type="text"], .gecko .lwa-row input[type="password"], .safari .lwa-row input[type="text"], .safari .lwa-row input[type="password"] { padding: 0.2em; }
+
+.lwa-row .lwa-username-input, .lwa-row .lwa-password-input { width: 125px; margin-right: 15px; }
+
+.lwa-row input[type="text"], .lwa-row input[type="password"] { width: 125px; height: 24px; margin-right: 15px; }
+
+.lwa-row .lwa-username-label, .lwa-row .lwa-password-label { padding-right: 10px; vertical-align: top; position: relative; top: 10px; }
+
+.lwa-row .lwa-submit-button input[type="submit"] { font-size: 1rem; padding: 7px 12px; margin-right: 1em; margin-bottom: 0; margin-top: 4px; background: #08c; }
+.lwa-row .lwa-submit-button input[type="submit"]:hover, .lwa-row .lwa-submit-button input[type="submit"]:focus { background: #006699; }
+
+.lwa-row .lwa-submit-links label { position: relative; top: 2px; }
+
+.lwa-header .lwa-info { width: 125px; position: relative; top: 7px; font-size: 13px; }
+
+/* .administrator .lwa-header .lwa-info,  { font-size: 13px; } */
+.gecko .lwa-header .lwa-info a, .safari .lwa-header .lwa-info a { position: relative; top: 5px; }
+
+.lwa td.avatar { padding-top: 0; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
